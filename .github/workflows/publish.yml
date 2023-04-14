@@ -4,14 +4,16 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/create-release@v1
+      - uses: actions/create-release@v3
         with:
-          node-version: 16
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
       - run: npm ci
       - run: npm test
         env:
@@ -21,9 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/create-release@v1
+      - uses: actions/create-release@v3
         with:
-          node-version: 16
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
           registry-url: https://npm.pkg.github.com/
           scope: "@Rashi632"
       - run: yarn install
