@@ -35,8 +35,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-release@v1
-        with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
