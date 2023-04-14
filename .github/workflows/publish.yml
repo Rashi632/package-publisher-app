@@ -1,10 +1,10 @@
 name: Node.js Package deploy
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
-    
+    branches: [master]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,6 +29,3 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-
-
