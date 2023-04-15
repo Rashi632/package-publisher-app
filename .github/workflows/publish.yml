@@ -34,10 +34,13 @@ jobs:
     needs: publish-gpr
     runs-on: ubuntu-latest
     steps:
+      - name: Read package.json
+        id: package
+        run: echo "::set-output name=version::$(jq -r '.version' package.json)"
       - uses: actions/create-release@v1
         with:
           node-version: 16
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+          tag_name: ${{ steps.package.outputs.version }}
+          release_name: Release ${{ steps.package.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
