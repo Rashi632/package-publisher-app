@@ -26,8 +26,8 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@rashi632"
       - run: npm ci
-      - run: npm publish
       - run: npm run semantic-release
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
