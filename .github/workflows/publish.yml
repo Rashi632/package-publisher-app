@@ -37,7 +37,7 @@ jobs:
       - uses: actions/create-release@v1
         with:
           node-version: 16
+      - run: npm ci
+      - run: npm run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - run: npm ci
-        - run: npm run semantic-release    
