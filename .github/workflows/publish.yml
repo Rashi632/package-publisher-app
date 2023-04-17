@@ -37,7 +37,7 @@ jobs:
       - uses: actions/create-release@v1
         with:
           node-version: 16
-          tag_name: ${{  GITHUB_RUN_NUMBER }}
-          release_name: Release ${{ GITHUB_RUN_NUMBER}}
+          tag_name: ${{  github.run_number }}
+          release_name: Release ${{ github.run_number}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
