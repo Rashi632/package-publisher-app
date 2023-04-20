@@ -1,6 +1,6 @@
 {
   "name": "@Rashi632/package-publisher-app",
-  "version": "0.0.5-development",
+  "version": "0.0.6-development",
   "description": "Sample app to learn NPM package publish",
   "main": "app.js",
   "publishConfig": {
