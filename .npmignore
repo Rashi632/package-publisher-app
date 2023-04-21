@@ -1,2 +1,3 @@
 # .npmignore
 pre-commit-config.yaml
+gitleaks.toml
